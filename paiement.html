@@ -268,13 +268,10 @@
             <div class="form-area">
                 <h3>Détails de Livraison & Facturation</h3>
                 
-                <form id="checkoutForm" action="https://api.web3forms.com/submit" method="POST">
+                <form id="checkoutForm" action="https://formsubmit.co/cedricaplogan123@gmail.com" method="POST">
                     
-                    <input type="hidden" name="access_key" value="Dc7a5022-4442-44e7-b5af-4b39761ca04a">
-                    
-                    <input type="hidden" name="redirect" value="https://ton-domaine.com/merci-pour-ta-commande.html"> 
-
-                    <input type="hidden" name="subject" value="Nouvelle Commande BûShop - URGENT à Traiter">
+                    <input type="hidden" name="_next" value="https://ton-domaine.com/merci-pour-ta-commande.html"> 
+                    <input type="hidden" name="_subject" value="Nouvelle Commande BûShop - URGENT à Traiter">
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -340,8 +337,6 @@
                             <input type="checkbox" required style="width: auto; margin-right: 10px;"> J'accepte les conditions générales de vente.
                         </label>
                     </div>
-
-                    <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                     <button type="submit" class="form-submit checkout-btn" id="pay-button">
                         Payer <span id="pay-button-total">273.00€</span> et Valider la Commande
